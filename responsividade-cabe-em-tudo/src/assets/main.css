@@ -1,12 +1,12 @@
 /* Design tokens: tudo que se repete vira variável */
 :root {
   --laranja: #ff5a1f;
-  --laranja-claro: #ffb38a;
+  --laranja-claro: #ffb48b;
   --preto: #111111;
   --branco: #ffffff;
-  --creme: #fff4ec;
+  --creme: #fff5ed;
   --cinza-claro: #bdbdbd;
-  --cinza-escuro: #333333;
+  --cinza-escuro: #343434;
 
   --esp-1: 0.5rem;
   --esp-2: 1rem;
