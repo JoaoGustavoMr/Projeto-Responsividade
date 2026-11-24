@@ -51,7 +51,7 @@ O guia se chama **Tela Cheia** e é dividido em seis telas, cada uma com sua pr�
 
 ### Pré-requisitos
 
-- [Node.js](https://nodejs.org/) (versão 20.19 ou superior, ou 22.12 ou superior)
+- [Node.js](https://nodejs.org/) (versão 22.18 ou superior, ou 24.12 ou superior)
 - npm (já vem com o Node.js)
 - [Git](https://git-scm.com/)
 
@@ -60,8 +60,8 @@ O guia se chama **Tela Cheia** e é dividido em seis telas, cada uma com sua pr�
 1. Clone o repositório:
 
 ```sh
-git clone <url-do-repositorio>
-cd responsividade-cabe-em-tudo
+git clone https://github.com/JoaoGustavoMr/Projeto-Responsividade
+cd Projeto-Responsividade/responsividade-cabe-em-tudo
 ```
 
 2. Instale as dependências:
