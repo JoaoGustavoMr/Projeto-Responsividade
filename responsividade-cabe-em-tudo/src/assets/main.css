@@ -1,0 +1,48 @@
+/* Design tokens: tudo que se repete vira variável */
+:root {
+  --laranja: #ff5a1f;
+  --laranja-claro: #ffb38a;
+  --preto: #111111;
+  --branco: #ffffff;
+  --creme: #fff4ec;
+  --cinza-claro: #bdbdbd;
+  --cinza-escuro: #333333;
+
+  --esp-1: 0.5rem;
+  --esp-2: 1rem;
+  --esp-3: 1.5rem;
+  --esp-4: 2.5rem;
+
+  --fonte-display: 'Archivo Black', Impact, sans-serif;
+  --fonte-texto: 'Archivo', system-ui, sans-serif;
+  --fonte-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --largura-max: 72rem;
+}
+
+/* MOBILE-FIRST: tudo aqui fora é para o celular */
+*, *::before, *::after { box-sizing: border-box; }
+html { font-size: 100%; } /* respeita o tamanho de fonte escolhido pela pessoa */
+body { margin: 0; font-family: var(--fonte-texto); line-height: 1.55; color: var(--preto); background: var(--creme); overflow-wrap: break-word; }
+img { max-width: 100%; height: auto; display: block; }
+h1, h2, h3 { line-height: 1.1; margin: 0; }
+a { color: inherit; }
+code { font-family: var(--fonte-mono); font-size: 0.9em; }
+p code, li code { background: var(--laranja-claro); padding: 0 0.2rem; }
+
+.wrap { width: 100%; max-width: var(--largura-max); margin-inline: auto; padding-inline: var(--esp-2); }
+.tag { display: inline-block; font: 700 0.7rem var(--fonte-mono); background: var(--laranja); color: var(--preto); padding: 0.2rem 0.5rem; margin: 0; }
+.tag--escura { background: var(--preto); color: var(--branco); }
+.btn { font: 700 0.85rem var(--fonte-mono); background: var(--preto); color: var(--branco); border: 2px solid var(--preto); padding: 0.7rem 1rem; cursor: pointer; text-transform: uppercase; }
+.btn:hover { background: var(--laranja); color: var(--preto); }
+.btn--ok { background: var(--laranja); color: var(--preto); }
+input[type='range'] { width: 100%; accent-color: var(--laranja); }
+input, select { font: inherit; padding: 0.5rem; border: 2px solid var(--preto); background: var(--branco); max-width: 100%; }
+.controle { display: grid; gap: var(--esp-1); margin-block: var(--esp-2); font-family: var(--fonte-mono); font-size: 0.85rem; }
+
+.rodape { display: flex; flex-direction: column; gap: var(--esp-1); font: 0.75rem var(--fonte-mono); padding-block: var(--esp-4) 5rem; border-top: 2px solid var(--preto); margin-top: var(--esp-4); }
+
+/* Telas maiores: só min-width */
+@media (min-width: 48rem) {
+  .wrap { padding-inline: var(--esp-4); }
+  .rodape { flex-direction: row; justify-content: space-between; }
+}
