@@ -1,4 +1,4 @@
-import{E as e,T as t,a as n,b as r,c as i,d as a,f as o,g as s,h as c,k as l,l as u,n as d,o as f,p,t as m,u as h,w as g,x as _}from"./index-CyGnooSM.js";import{n as v,r as y,t as b}from"./LabBox-3Gcnj9HV.js";var x={class:`tabela-wrap`},S={class:`conv`},C={class:`controle`},w={class:`controle`},T={key:0,class:`controle`},E={key:1,class:`controle`},D={key:2,class:`controle`},O={class:`resultado`},k=[`innerHTML`],A=`html { font-size: 100%; }      /* = 16px, ou o que a pessoa escolheu */
+import{E as e,T as t,a as n,b as r,c as i,d as a,f as o,g as s,h as c,k as l,l as u,n as d,o as f,p,t as m,u as h,w as g,x as _}from"./index-x3_WRH2p.js";import{n as v,r as y,t as b}from"./LabBox-U8rgXQSu.js";var x={class:`tabela-wrap`},S={class:`conv`},C={class:`controle`},w={class:`controle`},T={key:0,class:`controle`},E={key:1,class:`controle`},D={key:2,class:`controle`},O={class:`resultado`},k=[`innerHTML`],A=`html { font-size: 100%; }      /* = 16px, ou o que a pessoa escolheu */
 h1   { font-size: 2.5rem; }      /* 2.5 × 16 = 40px */
 .btn { padding: 0.5em 1em; }     /* cresce junto com a fonte do botão */
 .texto { max-width: 65ch; }      /* ~65 letras por linha */

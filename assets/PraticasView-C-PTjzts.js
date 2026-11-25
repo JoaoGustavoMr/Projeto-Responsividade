@@ -1,4 +1,4 @@
-import{E as e,b as t,c as n,d as r,g as i,h as a,k as o,n as s,p as c,u as l,w as u,x as d}from"./index-CyGnooSM.js";import{n as f,r as p,t as m}from"./LabBox-3Gcnj9HV.js";var h={class:`vitals`},g={class:`item`},_=`// Componentes em PascalCase e com 2+ palavras: CardAnimal.vue, TheHeader.vue
+import{E as e,b as t,c as n,d as r,g as i,h as a,k as o,n as s,p as c,u as l,w as u,x as d}from"./index-x3_WRH2p.js";import{n as f,r as p,t as m}from"./LabBox-U8rgXQSu.js";var h={class:`vitals`},g={class:`item`},_=`// Componentes em PascalCase e com 2+ palavras: CardAnimal.vue, TheHeader.vue
 const props = defineProps({
   nome:  { type: String, required: true },   // props tipadas
   idade: { type: Number, default: 0 },

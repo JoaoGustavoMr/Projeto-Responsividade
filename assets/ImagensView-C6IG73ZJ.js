@@ -1,4 +1,4 @@
-import{D as e,E as t,O as n,T as r,_ as i,a,b as o,c as s,d as c,f as l,g as u,h as d,k as f,n as p,p as m,u as h,v as g,w as _,x as v,y}from"./index-CyGnooSM.js";import{n as b,r as x,t as S}from"./LabBox-3Gcnj9HV.js";var C={class:`modos`},w=[`onClick`],T={class:`artigo`},E=[`src`],D={key:1,class:`reserva`},O={class:`controle`},k=`https://picsum.photos/id/1062/800/450`,A=`<!-- width/height = proporção reservada antes de baixar -->
+import{D as e,E as t,O as n,T as r,_ as i,a,b as o,c as s,d as c,f as l,g as u,h as d,k as f,n as p,p as m,u as h,v as g,w as _,x as v,y}from"./index-x3_WRH2p.js";import{n as b,r as x,t as S}from"./LabBox-U8rgXQSu.js";var C={class:`modos`},w=[`onClick`],T={class:`artigo`},E=[`src`],D={key:1,class:`reserva`},O={class:`controle`},k=`https://picsum.photos/id/1062/800/450`,A=`<!-- width/height = proporção reservada antes de baixar -->
 <img
   src="foto-800.jpg"
   srcset="foto-400.jpg 400w, foto-800.jpg 800w, foto-1600.jpg 1600w"

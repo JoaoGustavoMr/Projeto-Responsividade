@@ -1,4 +1,4 @@
-import{E as e,O as t,T as n,a as r,b as i,c as a,d as o,g as s,h as c,k as l,l as u,n as d,o as f,p,u as m,w as h,x as g}from"./index-CyGnooSM.js";import{n as _,r as v,t as y}from"./LabBox-3Gcnj9HV.js";var b={class:`opcoes`},x={class:`controle`},S={class:`controle`},C={class:`controle`},w={class:`controle`},T={class:`pista`},E=16,D=`/* FLEX: uma dimensão (linha OU coluna) */
+import{E as e,O as t,T as n,a as r,b as i,c as a,d as o,g as s,h as c,k as l,l as u,n as d,o as f,p,u as m,w as h,x as g}from"./index-x3_WRH2p.js";import{n as _,r as v,t as y}from"./LabBox-U8rgXQSu.js";var b={class:`opcoes`},x={class:`controle`},S={class:`controle`},C={class:`controle`},w={class:`controle`},T={class:`pista`},E=16,D=`/* FLEX: uma dimensão (linha OU coluna) */
 .barra {
   display: flex;
   justify-content: space-between; /* eixo principal */
