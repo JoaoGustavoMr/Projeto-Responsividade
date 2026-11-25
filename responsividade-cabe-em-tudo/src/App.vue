@@ -9,7 +9,7 @@ import ViewportBadge from '@/components/ViewportBadge.vue'
     <RouterView />
   </main>
   <footer class="rodape wrap">
-    <span>© 2026 · Tela Cheia</span><span>feito com Vue 3 + Vite, mobile-first</span>
+    <span>TELA CHEIA © 2026</span><span>feito com Vue 3 + Vite, mobile-first</span>
   </footer>
   <ViewportBadge />
 </template>

@@ -1,22 +1,35 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, nextTick, onMounted } from 'vue'
 import SecaoGuia from '@/components/SecaoGuia.vue'
 import CodeBlock from '@/components/CodeBlock.vue'
 import LabBox from '@/components/LabBox.vue'
 
-// LAB: imagem com atraso, com e sem width/height
-const comDimensoes = ref(false)
-const carregada = ref(false)
-const chave = ref(0)
+// LAB: "Quanto o texto andou?" — 3 jeitos de colocar a mesma imagem
+const modo = ref('nada')
+const modos = {
+  nada: 'sem width/height',
+  atributos: 'width="800" height="450"',
+  ratio: 'CSS aspect-ratio: 16/9',
+}
 const src = ref('')
+const chave = ref(0)
+const pulo = ref(null)
+const paragrafo = ref(null)
+let topoAntes = 0
 const URL_IMG = 'https://picsum.photos/id/1062/800/450'
 function recarregar() {
-  carregada.value = false
   src.value = ''
+  pulo.value = null
   chave.value++ // :key novo força o Vue a recriar a <img>
-  setTimeout(() => { src.value = `${URL_IMG}?v=${chave.value}` }, 1500) // atraso proposital
+  nextTick(() => {
+    topoAntes = paragrafo.value?.offsetTop ?? 0 // posição do texto ANTES da imagem chegar
+    setTimeout(() => { src.value = `${URL_IMG}?v=${chave.value}` }, 1500) // atraso proposital
+  })
 }
-recarregar()
+function medir() {
+  pulo.value = Math.round((paragrafo.value?.offsetTop ?? 0) - topoAntes)
+}
+onMounted(recarregar)
 
 const fit = ref('cover')
 const fontes = [
@@ -46,16 +59,21 @@ img   { max-width: 100%; height: auto; }      /* nunca estoura o pai */
 
     <CodeBlock linguagem="html + css" :codigo="codigo" />
 
-    <LabBox titulo="O texto que pula">
-      <label class="controle"><span><input type="checkbox" v-model="comDimensoes" @change="recarregar" /> img com width="800" height="450"</span></label>
-      <button class="btn" @click="recarregar">recarregar imagem (1,5s de atraso)</button>
-      <div class="artigo">
-        <p class="mono">{{ carregada ? 'imagem chegou' : 'carregando…' }}</p>
-        <img v-if="src" :key="chave" :src="src" alt="Paisagem de exemplo"
-          v-bind="comDimensoes ? { width: 800, height: 450 } : {}" @load="carregada = true" />
-        <div v-else-if="comDimensoes" class="reserva"></div>
-        <p><strong>Este parágrafo</strong> é o texto que você estava lendo. Sem dimensões, ele pula quando a imagem chega. Com dimensões, o espaço já estava reservado e nada se mexe.</p>
+    <LabBox titulo="Quanto o texto andou?">
+      <div class="modos">
+        <button v-for="(rotulo, m) in modos" :key="m" class="modo" :class="{ ativo: modo === m }"
+          @click="modo = m; recarregar()">{{ rotulo }}</button>
       </div>
+      <div class="artigo">
+        <img v-if="src" :key="chave" :src="src" alt="Paisagem de exemplo" :class="{ ratio: modo === 'ratio' }"
+          v-bind="modo === 'atributos' ? { width: 800, height: 450 } : {}" @load="medir" />
+        <div v-else-if="modo !== 'nada'" class="reserva"></div>
+        <p ref="paragrafo"><strong>Este parágrafo</strong> é o texto que você estava lendo. Veja quantos pixels ele foi empurrado quando a foto chegou.</p>
+      </div>
+      <p class="placar" :class="{ ruim: pulo > 0 }">
+        {{ pulo === null ? 'esperando a imagem (1,5s)…' : pulo > 0 ? `o texto pulou ${pulo}px — isso conta no CLS` : 'o texto não se mexeu: 0px de pulo' }}
+      </p>
+      <button class="btn" @click="recarregar">de novo</button>
     </LabBox>
 
     <LabBox titulo="object-fit numa caixa 1:1">
@@ -72,6 +90,12 @@ img   { max-width: 100%; height: auto; }      /* nunca estoura o pai */
 
 <style scoped>
 .artigo { margin-top: var(--esp-2); border-left: 0.3rem solid var(--laranja); padding-left: var(--esp-2); }
+.modos { display: flex; flex-wrap: wrap; gap: var(--esp-1); }
+.modo { font: 0.8rem var(--fonte-mono); padding: var(--esp-1) var(--esp-2); border: 2px solid var(--preto); background: var(--branco); cursor: pointer; }
+.ativo { background: var(--laranja); }
+.ratio { width: 100%; aspect-ratio: 16 / 9; }
+.placar { font: 1rem var(--fonte-mono); padding: var(--esp-1) var(--esp-2); background: var(--creme); border: 2px solid var(--preto); }
+.ruim { background: var(--preto); color: var(--branco); }
 .reserva { aspect-ratio: 800 / 450; background: var(--creme); }
 .quadrado { width: 100%; max-width: 18rem; aspect-ratio: 1; height: auto; border: 3px solid var(--preto); background: var(--creme); }
 .mono { font: 0.8rem var(--fonte-mono); }
