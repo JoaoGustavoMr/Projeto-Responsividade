@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 import HomeView from '@/views/HomeView.vue'
 
 // Só a Home é carregada de cara; as outras rotas viram arquivos separados (lazy loading)
@@ -13,9 +13,13 @@ const routes = [
 ]
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHashHistory(),
   routes,
   scrollBehavior: () => ({ top: 0 }),
 })
-router.afterEach((to) => { document.title = `${to.meta.title} — Tela Cheia` })
+
+router.afterEach((to) => {
+  document.title = `${to.meta.title} — Tela Cheia`
+})
+
 export default router
